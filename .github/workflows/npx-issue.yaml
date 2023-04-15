@@ -1,0 +1,21 @@
+name: Demo NPX Issue
+on: [push]
+jobs:
+  npx-v8:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.16.0
+    - run: npm i -g npm@8.19.4
+    - run: npx cdk --version
+  npx-v9:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.16.0
+    - run: npm i -g npm@9.6.4
+    - run: npx cdk --version
