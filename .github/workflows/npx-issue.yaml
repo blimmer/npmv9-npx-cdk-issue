@@ -9,9 +9,10 @@ jobs:
       with:
         node-version: 18.16.0
     - run: npm i -g npm@8.19.4
-    - run: cd v8
-    - run: npm ci
-    - run: npx cdk --version
+    - run: |
+        cd v8
+        npm ci
+        npx cdk --version
   npx-v9:
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +21,7 @@ jobs:
       with:
         node-version: 18.16.0
     - run: npm i -g npm@9.6.4
-    - run: cd v9
-    - run: npm ci
-    - run: npx cdk --version
+    - run: |
+        cd v9
+        npm ci
+        npx cdk --version
